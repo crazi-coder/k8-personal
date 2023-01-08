@@ -38,7 +38,7 @@ spec:
       tag: 14.6-alpine3.17
     primary:
       containerSecurityContext:
-        runAsUser: 0
+        runAsUser: 1001
       persistence:
         size: 150Gi
     volumePermissions:
