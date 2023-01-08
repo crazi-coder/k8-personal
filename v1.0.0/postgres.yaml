@@ -36,12 +36,12 @@ spec:
     image:
       repository: library/postgres
       tag: 14.6-alpine3.17
-    postgresqlDataDir: /var/lib/postgresql/data/
+    #postgresqlDataDir: /var/lib/postgresql/data/
     primary:
+    containerSecurityContext:
+      runAsUser: postgres
       persistence:
         size: 150Gi
-        mountPath: /var/lib/postgresql
+        #mountPath: /var/lib/postgresql
     volumePermissions:
-      containerSecurityContext:
-        runAsUser: postgres
       enabled: true
