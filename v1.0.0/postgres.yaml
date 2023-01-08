@@ -32,14 +32,16 @@ spec:
       postgresPassword: nopassword
       password: nopassword
       username: abhilash
-    
+
+    postgresqlDataDir: /bitnami/postgresql/data
     image:
       repository: library/postgres
       tag: 14.6-alpine3.17
     primary:
       containerSecurityContext:
-        runAsUser: 1001
+        runAsUser: 0
       persistence:
         size: 150Gi
-    volumePermissions:
-      enabled: true
+        mountPath: /var/lib/postgres
+    # volumePermissions:
+    #   enabled: true
