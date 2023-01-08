@@ -17,11 +17,11 @@ spec:
         name: kedacore
         namespace: flux-system
       interval: 24h
-  values:
-    resources:
-      limits:
-        cpu: 300m
-        memory: 300Mi
-      requests:
-        cpu: 300m
-        memory: 300Mi
+  # values:
+  #   resources:
+  #     limits:
+  #       cpu: 300m
+  #       memory: 300Mi
+  #     requests:
+  #       cpu: 300m
+  #       memory: 300Mi
