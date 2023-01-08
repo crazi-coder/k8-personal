@@ -32,10 +32,10 @@ spec:
       postgresPassword: nopassword
       password: nopassword
       username: abhilash
-
-    primary:
-      image:
+    
+    image:
         tag: 14.6.0
+    primary:
       persistence:
         size: 150Gi
       volumePermissions:
