@@ -33,15 +33,15 @@ spec:
       password: nopassword
       username: abhilash
 
-    # image:
-    #   repository: library/postgres
-    #   tag: 14.6-alpine3.17
+    image:
+      repository: library/postgres
+      tag: 14.6-alpine3.17
     primary:
       containerSecurityContext:
         runAsUser: 65534 # https://serverfault.com/questions/212178/chown-on-a-mounted-nfs-partition-gives-operation-not-permitted
       persistence:
         size: 150Gi
-    volumePermissions:
-      containerSecurityContext:
-        runAsUser: 65534
-      enabled: true
+    # volumePermissions:
+    #   containerSecurityContext:
+    #     runAsUser: 65534
+    #   enabled: true
