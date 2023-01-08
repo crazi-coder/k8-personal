@@ -38,7 +38,7 @@ spec:
       tag: 14.6-alpine3.17
     primary:
       containerSecurityContext:
-        runAsUser: postgres
+        runAsUser: 0
       persistence:
         size: 150Gi
     volumePermissions:
