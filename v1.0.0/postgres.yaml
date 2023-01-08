@@ -2,19 +2,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: keda-release
+  name: postgres-release
   namespace: personal-rnd
 spec:
-  releaseName: keda
+  releaseName: postgres
   targetNamespace: personal-rnd
   interval: 24h
   chart:
     spec:
-      chart: keda
-      version: 2.6.1
+      chart: postgresql
+      version: 12.1.7
       sourceRef:
         kind: HelmRepository
-        name: kedacore
+        name: bitnami
         namespace: flux-system
       interval: 24h
   values:
@@ -25,3 +25,8 @@ spec:
       requests:
         cpu: 300m
         memory: 300Mi
+    auth:
+      postgresPassword: nopassword
+      password: nopassword
+      password: abhilash
+    primary.persistence.size: 250Gi
