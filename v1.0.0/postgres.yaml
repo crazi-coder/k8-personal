@@ -28,5 +28,5 @@ spec:
     auth:
       postgresPassword: nopassword
       password: nopassword
-      password: abhilash
+      username: abhilash
     primary.persistence.size: 250Gi
