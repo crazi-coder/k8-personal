@@ -18,6 +18,7 @@ spec:
         name: bitnami
         namespace: flux-system
       interval: 24h
+      
   values:
     resources:
       limits:
