@@ -38,8 +38,8 @@ spec:
       repository: library/postgres
       tag: 14.6-alpine3.17
     primary:
-      containerSecurityContext:
-        runAsUser: 0
+      # containerSecurityContext:
+      #   runAsUser: 0
       persistence:
         size: 150Gi
         mountPath: /var/lib/postgres
