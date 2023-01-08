@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: postgres-release
   namespace: personal-rnd
+  
 spec:
   releaseName: postgres
   targetNamespace: personal-rnd
