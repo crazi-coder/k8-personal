@@ -34,6 +34,8 @@ spec:
       username: abhilash
 
     primary:
+      image:
+        tag: 14.6.0-debian-11-r20
       persistence:
         size: 100Gi
       volumePermissions:
