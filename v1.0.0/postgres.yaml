@@ -34,7 +34,8 @@ spec:
       username: abhilash
     
     image:
-        tag: 14.6.0
+      repository: postgresql
+      tag: 14.6.0
     primary:
       persistence:
         size: 150Gi
