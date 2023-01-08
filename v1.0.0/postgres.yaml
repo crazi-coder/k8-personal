@@ -34,7 +34,7 @@ spec:
       username: abhilash
     
     image:
-      repository: postgresql/postgresql
+      repository: library/postgresql
       tag: 14.6-alpine3.17
     primary:
       persistence:
