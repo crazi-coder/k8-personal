@@ -35,7 +35,7 @@ spec:
     
     image:
       repository: library/postgresql
-      tag: 14.6-alpine3.17
+      tag: 14.6
     primary:
       persistence:
         size: 150Gi
