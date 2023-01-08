@@ -25,8 +25,12 @@ spec:
       requests:
         cpu: 300m
         memory: 300Mi
+        
     auth:
       postgresPassword: nopassword
       password: nopassword
       username: abhilash
-    primary.persistence.size: 20Gi
+
+    primary:
+      persistence:
+        size: 300Gi
