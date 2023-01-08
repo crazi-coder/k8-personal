@@ -42,4 +42,6 @@ spec:
       persistence:
         size: 150Gi
     volumePermissions:
+      containerSecurityContext:
+        runAsUser: 65534
       enabled: true
