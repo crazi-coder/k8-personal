@@ -34,4 +34,4 @@ spec:
 
     primary:
       persistence:
-        size: 300Gi
+        size: 100Gi
