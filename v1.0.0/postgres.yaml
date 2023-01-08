@@ -18,7 +18,7 @@ spec:
         name: bitnami
         namespace: flux-system
       interval: 24h
-      
+
   values:
     resources:
       limits:
@@ -37,4 +37,4 @@ spec:
       persistence:
         size: 100Gi
 
-    volumePermissions.enabled: true
+      volumePermissions.enabled: true
