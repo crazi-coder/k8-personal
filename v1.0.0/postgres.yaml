@@ -41,5 +41,5 @@ spec:
         runAsUser: 65534 # https://serverfault.com/questions/212178/chown-on-a-mounted-nfs-partition-gives-operation-not-permitted
       persistence:
         size: 150Gi
-    # volumePermissions:
-    #   enabled: true
+    volumePermissions:
+      enabled: true
