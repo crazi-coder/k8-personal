@@ -38,8 +38,8 @@ spec:
       tag: 14.6-alpine3.17
     #postgresqlDataDir: /var/lib/postgresql/data/
     primary:
-    containerSecurityContext:
-      runAsUser: postgres
+      containerSecurityContext:
+        runAsUser: postgres
       persistence:
         size: 150Gi
         #mountPath: /var/lib/postgresql
