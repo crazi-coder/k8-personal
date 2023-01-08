@@ -33,11 +33,13 @@ spec:
       password: nopassword
       username: abhilash
     
-    # image:
-    #   repository: library/postgres
-    #   tag: 14.6-alpine3.17
+    image:
+      repository: library/postgres
+      tag: 14.6-alpine3.17
     primary:
       persistence:
         size: 150Gi
-    volumePermissions:
-      enabled: true
+        mountPath: /var/lib/postgresql
+    postgresqlDataDir: /var/lib/postgresql/data/
+    # volumePermissions:
+    #   enabled: true
