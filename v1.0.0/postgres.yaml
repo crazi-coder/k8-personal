@@ -27,10 +27,10 @@ spec:
   #       cpu: 300m
   #       memory: 300Mi
 
-    auth:
-      # postgresPassword: nopassword
-      password: nopassword
-      username: abhilash
+    # auth:
+    #   # postgresPassword: nopassword
+    #   password: nopassword
+    #   username: abhilash
 
     primary:
       persistence:
