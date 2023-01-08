@@ -4,7 +4,7 @@ kind: HelmRelease
 metadata:
   name: postgres-release
   namespace: personal-rnd
-  
+
 spec:
   releaseName: postgres
   targetNamespace: personal-rnd
@@ -18,7 +18,7 @@ spec:
         name: bitnami
         namespace: flux-system
       interval: 24h
-  # values:
+  values:
   #   resources:
   #     limits:
   #       cpu: 300m
