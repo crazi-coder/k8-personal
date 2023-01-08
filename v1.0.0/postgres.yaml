@@ -40,6 +40,6 @@ spec:
       persistence:
         size: 150Gi
         mountPath: /var/lib/postgresql
-    postgresqlDataDir: /var/lib/postgresql/data/
+      postgresqlDataDir: /var/lib/postgresql/data/
     # volumePermissions:
     #   enabled: true
