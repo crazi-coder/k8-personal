@@ -37,6 +37,6 @@ spec:
       image:
         tag: 14.6.0
       persistence:
-        size: 100Gi
+        size: 150Gi
       volumePermissions:
         enabled: true
