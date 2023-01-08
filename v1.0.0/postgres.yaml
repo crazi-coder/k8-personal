@@ -36,5 +36,5 @@ spec:
     primary:
       persistence:
         size: 100Gi
-      # volumePermissions:
-      #   enabled: true
+      volumePermissions:
+        enabled: true
