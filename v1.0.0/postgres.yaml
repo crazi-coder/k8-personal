@@ -18,20 +18,20 @@ spec:
         name: bitnami
         namespace: flux-system
       interval: 24h
-  values:
-  #   resources:
-  #     limits:
-  #       cpu: 300m
-  #       memory: 300Mi
-  #     requests:
-  #       cpu: 300m
-  #       memory: 300Mi
+  # values:
+  # #   resources:
+  # #     limits:
+  # #       cpu: 300m
+  # #       memory: 300Mi
+  # #     requests:
+  # #       cpu: 300m
+  # #       memory: 300Mi
 
-    # auth:
-    #   # postgresPassword: nopassword
-    #   password: nopassword
-    #   username: abhilash
+  #   # auth:
+  #   #   # postgresPassword: nopassword
+  #   #   password: nopassword
+  #   #   username: abhilash
 
-    primary:
-      persistence:
-        size: 100Gi
+  #   primary:
+  #     persistence:
+  #       size: 100Gi
