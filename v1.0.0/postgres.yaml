@@ -29,8 +29,8 @@ spec:
 
     auth:
       postgresPassword: nopassword
-      password: nopassword
-      username: abhilash
+      # password: nopassword
+      # username: abhilash
 
     primary:
       persistence:
