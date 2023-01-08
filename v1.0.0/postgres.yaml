@@ -41,5 +41,7 @@ spec:
       persistence:
         size: 150Gi
         mountPath: /var/lib/postgresql
-    # volumePermissions:
-    #   enabled: true
+    volumePermissions:
+      containerSecurityContext:
+        runAsUser: postgres
+      enabled: true
