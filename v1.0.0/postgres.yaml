@@ -39,7 +39,7 @@ spec:
     #   tag: 14.6-alpine3.17
     primary:
       containerSecurityContext:
-        runAsUser: 1000
+        runAsUser: 65534
       persistence:
         size: 150Gi
         mountPath: /var/lib/postgres
