@@ -22,7 +22,7 @@ spec:
   values:
     global:
       applicationName: flaskapp-8277127070
-    replicaCount: 1
+    replicaCount: 2
     revisionHistoryLimit: 5
     image: registry.crazedencoder.com/8277127070/sample-app:v1
     containerDetails:
