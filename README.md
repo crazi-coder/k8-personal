@@ -41,3 +41,77 @@ sudo docker image push --all-tags registry.crazedencoder.com/8277127070/sample-a
 ```
 ## Step 3: Create a kube deployment files
 
+This file will create a stateless controller manifest 
+
+```yaml 
+# replace the <mobilenumber> with your mobile number
+
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: flaskapp-<mobilenumber>-release
+  namespace: personal-rnd
+spec:
+  releaseName: flaskapp-<mobilenumber>
+  targetNamespace: personal-rnd
+  interval: 24h
+  chart:
+    spec:
+      chart: base-deployment
+      version: 1.0.0
+      sourceRef:
+        kind: HelmRepository
+        name: crazedencoder
+        namespace: flux-system
+      interval: 24h
+  values:
+    global:
+      applicationName: flaskapp-<mobilenumber>
+    replicaCount: 2
+    image: registry.crazedencoder.com/<mobilenumber>/sample-app:v1
+    containerDetails:
+      pullPolicy: IfNotPresent
+      ports:
+        - containerPort: 5000
+          name: pw-address
+    service:
+      type: ClusterIP
+      port: 3XXX # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+      targetPort: pw-address
+
+```
+Now lets create a sub domain under crazedencoder.com and get encript with Let's Encrypt 
+
+```yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: letsencrypt-ingress-<mobilenumber>-flaskapp
+ namespace: personal-rnd
+ annotations:
+  nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  nginx.ingress.kubernetes.io/secure-backends: "false"
+  nginx.ingress.kubernetes.io/enable-access-log: "false"
+  cert-manager.io/cluster-issuer: letsencrypt-issuer
+  nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+  kubernetes.io/ingress.class: nginx
+spec:
+ tls:
+ - hosts:
+   - <mobilenumber>.crazedencoder.com
+   secretName: letsencrypt-issuer
+ rules:
+ - host: <mobilenumber>.crazedencoder.com
+   http:
+     paths:
+     - pathType: Prefix
+       path: /
+       backend:
+         service:
+           name: service-flaskapp-<mobilenumber>
+           port:
+             number: 3XXX # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+
+```
+We are ready to test your application !!
