@@ -9,6 +9,7 @@ metadata:
 spec:
   releaseName: 8277127070-flaskapp
   targetNamespace: personal-rnd
+  interval: 24h
   chart:
     spec:
       chart: base-deployment
@@ -17,6 +18,7 @@ spec:
         kind: HelmRepository
         name: crazedencoder
         namespace: flux-system
+      interval: 24h
   values:
     global:
       applicationName: 8277127070-flaskapp
