@@ -4,8 +4,6 @@ kind: HelmRelease
 metadata:
   name: flaskapp-8277127070-release
   namespace: personal-rnd
-  annotations:
-    fluxcd.io/automated: "true"
 spec:
   releaseName: flaskapp-8277127070
   targetNamespace: personal-rnd
@@ -48,7 +46,6 @@ metadata:
   cert-manager.io/cluster-issuer: letsencrypt-issuer
   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
   kubernetes.io/ingress.class: nginx
-  fluxcd.io/automated: "true"
 spec:
  tls:
  - hosts:
