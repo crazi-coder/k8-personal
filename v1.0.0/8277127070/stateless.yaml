@@ -30,6 +30,7 @@ spec:
     service:
       type: ClusterIP
       port: 3020
+      targetPort: pw-address
 
 ---
 apiVersion: networking.k8s.io/v1
