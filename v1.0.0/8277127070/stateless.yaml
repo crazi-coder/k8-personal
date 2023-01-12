@@ -21,17 +21,8 @@ spec:
     global:
       applicationName: flaskapp-8277127070
     replicaCount: 2
-    revisionHistoryLimit: 2
     image: registry.crazedencoder.com/8277127070/sample-app:v1
-    containerDetails:
-      pullPolicy: IfNotPresent
-      ports:
-        - containerPort: 5000
-          name: pw-address
-    service:
-      type: ClusterIP
-      port: 8001
-
+    
 
 ---
 apiVersion: networking.k8s.io/v1
