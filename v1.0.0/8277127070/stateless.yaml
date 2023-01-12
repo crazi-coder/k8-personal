@@ -1,4 +1,4 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: 8277127070-flaskapp-release
@@ -29,33 +29,33 @@ spec:
       port: 8001
 
 
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#  name: letsencrypt-ingress-8277127070-flaskapp
-#  namespace: personal-rnd
-#  annotations:
-#   nginx.ingress.kubernetes.io/ssl-redirect: "true"
-#   nginx.ingress.kubernetes.io/secure-backends: "true"
-#   nginx.ingress.kubernetes.io/enable-access-log: "false"
-#   cert-manager.io/cluster-issuer: letsencrypt-issuer
-#   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-#   kubernetes.io/ingress.class: nginx
-#   fluxcd.io/automated: "true"
-# spec:
-#  tls:
-#  - hosts:
-#    - 8277127070.crazedencoder.com
-#    secretName: letsencrypt-issuer
-#  rules:
-#  - host: 8277127070.crazedencoder.com
-#    http:
-#      paths:
-#      - pathType: Prefix
-#        path: /
-#        backend:
-#          service:
-#            name: 8277127070-flaskapp
-#            port:
-#              number: 8001
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: letsencrypt-ingress-8277127070-flaskapp
+ namespace: personal-rnd
+ annotations:
+  nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  nginx.ingress.kubernetes.io/secure-backends: "true"
+  nginx.ingress.kubernetes.io/enable-access-log: "false"
+  cert-manager.io/cluster-issuer: letsencrypt-issuer
+  nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  kubernetes.io/ingress.class: nginx
+  fluxcd.io/automated: "true"
+spec:
+ tls:
+ - hosts:
+   - 8277127070.crazedencoder.com
+   secretName: letsencrypt-issuer
+ rules:
+ - host: 8277127070.crazedencoder.com
+   http:
+     paths:
+     - pathType: Prefix
+       path: /
+       backend:
+         service:
+           name: 8277127070-flaskapp
+           port:
+             number: 8001
