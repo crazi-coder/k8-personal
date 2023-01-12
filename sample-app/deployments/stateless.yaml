@@ -1,0 +1,58 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: 8277127070-flaskapp-release
+  namespace: k8-personal
+  annotations:
+    fluxcd.io/automated: "true"
+
+spec:
+  releaseName: 8277127070-flaskapp
+  targetNamespace: k8-personal
+  chart:
+    repository: http://chartmuseum.internal:4532/
+    name: base-deployment
+    version: 1.0.0
+  values:
+    global:
+      applicationName: 8277127070-flaskapp
+    replicaCount: 1
+    revisionHistoryLimit: 5
+    image: registry.crazedencoder.com/8277127070/sample-app
+    containerDetails:
+      pullPolicy: IfNotPresent
+      ports:
+        - containerPort: 5000
+          name: pw-address
+    service:
+      type: ClusterIP
+      port: 8001
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: letsencrypt-ingress-8277127070-flaskapp
+ namespace: k8-personal
+ annotations:
+  nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  nginx.ingress.kubernetes.io/secure-backends: "true"
+  nginx.ingress.kubernetes.io/enable-access-log: "false"
+  cert-manager.io/cluster-issuer: letsencrypt-issuer
+  nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  kubernetes.io/ingress.class: nginx
+spec:
+ tls:
+ - hosts:
+   - 8277127070.crazedencoder.com
+   secretName: letsencrypt-issuer
+ rules:
+ - host: 8277127070.crazedencoder.com
+   http:
+     paths:
+     - pathType: Prefix
+       path: /
+       backend:
+         service:
+           name: 8277127070-flaskapp
+           port:
+             number: 8001
