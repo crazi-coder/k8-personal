@@ -57,6 +57,6 @@ spec:
        path: /
        backend:
          service:
-           name: flaskapp-8277127070
+           name: service-flaskapp-8277127070
            port:
              number: 8001
