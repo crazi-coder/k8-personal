@@ -1,0 +1,64 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: flaskapp-raghuinfilect-t1-release
+  namespace: personal-rnd
+spec:
+  releaseName: flaskapp-raghuinfilect-t1
+  targetNamespace: personal-rnd
+  interval: 24h
+  chart:
+    spec:
+      chart: base-deployment
+      version: 1.0.0
+      sourceRef:
+        kind: HelmRepository
+        name: crazedencoder
+        namespace: flux-system
+      interval: 24h
+  values:
+    global:
+      applicationName: flaskapp-raghuinfilect-t1
+    replicaCount: 2
+    image: registry.crazedencoder.com/raghuinfilect/sample-app:v1
+    containerDetails:
+      pullPolicy: IfNotPresent
+      ports:
+        - containerPort: 5000
+          name: pw-address
+    service:
+      type: ClusterIP
+      port: 3050
+      targetPort: pw-address
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: letsencrypt-ingress-raghuinfilect-flaskapp
+ namespace: personal-rnd
+ annotations:
+  nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  nginx.ingress.kubernetes.io/secure-backends: "false"
+  nginx.ingress.kubernetes.io/enable-access-log: "false"
+  cert-manager.io/cluster-issuer: letsencrypt-issuer
+  nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+  kubernetes.io/ingress.class: nginx
+spec:
+ tls:
+ - hosts:
+   - raghuinfilectt1.crazedencoder.com
+   secretName: letsencrypt-issuer
+ rules:
+ - host: raghuinfilectt1.crazedencoder.com
+   http:
+     paths:
+     - pathType: Prefix
+       path: /
+       backend:
+         service:
+           name: service-flaskapp-raghuinfilect-t1
+           port:
+             number: 3050
