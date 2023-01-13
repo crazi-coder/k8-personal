@@ -2,10 +2,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: flaskapp-8277127070-t1-release
+  name: flaskapp-7019299397-t1-release
   namespace: personal-rnd
 spec:
-  releaseName: flaskapp-8277127070-t1
+  releaseName: flaskapp-7019299397-t1
   targetNamespace: personal-rnd
   interval: 24h
   chart:
@@ -19,9 +19,9 @@ spec:
       interval: 24h
   values:
     global:
-      applicationName: flaskapp-8277127070-t1
+      applicationName: flaskapp-7019299397-t1
     replicaCount: 2
-    image: registry.crazedencoder.com/8277127070/sample-app:v1
+    image: registry.crazedencoder.com/7019299397/sample-app:v1
     containerDetails:
       pullPolicy: IfNotPresent
       ports:
@@ -29,7 +29,7 @@ spec:
           name: pw-address
     service:
       type: ClusterIP
-      port: 3021
+      port: 7019
       targetPort: pw-address
 
 
@@ -37,7 +37,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: letsencrypt-ingress-8277127070-flaskapp
+ name: letsencrypt-ingress-7019299397-flaskapp
  namespace: personal-rnd
  annotations:
   nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -49,16 +49,16 @@ metadata:
 spec:
  tls:
  - hosts:
-   - 8277127070t1.crazedencoder.com
+   - 7019299397t1.crazedencoder.com
    secretName: letsencrypt-issuer
  rules:
- - host: 8277127070t1.crazedencoder.com
+ - host: 7019299397t1.crazedencoder.com
    http:
      paths:
      - pathType: Prefix
        path: /
        backend:
          service:
-           name: service-flaskapp-8277127070-t1
+           name: service-flaskapp-7019299397-t1
            port:
-             number: 3021
+             number: 7019
