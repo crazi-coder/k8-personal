@@ -44,15 +44,15 @@ sudo docker image push --all-tags registry.crazedencoder.com/8277127070/sample-a
 This file will create a stateless controller manifest 
 
 ```yaml 
-# replace the 7019299397 with your mobile number
+# replace the <mobilenumber> with your mobile number
 
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: flaskapp-7019299397-release
+  name: flaskapp-<mobilenumber>-release
   namespace: personal-rnd
 spec:
-  releaseName: flaskapp-7019299397
+  releaseName: flaskapp-<mobilenumber>
   targetNamespace: personal-rnd
   interval: 24h
   chart:
@@ -66,9 +66,9 @@ spec:
       interval: 24h
   values:
     global:
-      applicationName: flaskapp-7019299397
+      applicationName: flaskapp-<mobilenumber>
     replicaCount: 2
-    image: registry.crazedencoder.com/7019299397/sample-app:v1
+    image: registry.crazedencoder.com/<mobilenumber>/sample-app:v1
     containerDetails:
       pullPolicy: IfNotPresent
       ports:
@@ -87,7 +87,7 @@ Now lets create a sub domain under crazedencoder.com and get encript with Let's 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: letsencrypt-ingress-7019299397-flaskapp
+ name: letsencrypt-ingress-<mobilenumber>-flaskapp
  namespace: personal-rnd
  annotations:
   nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -99,19 +99,19 @@ metadata:
 spec:
  tls:
  - hosts:
-   - 7019299397.crazedencoder.com
+   - <mobilenumber>.crazedencoder.com
    secretName: letsencrypt-issuer
  rules:
- - host: 7019299397.crazedencoder.com
+ - host: <mobilenumber>.crazedencoder.com
    http:
      paths:
      - pathType: Prefix
        path: /
        backend:
          service:
-           name: service-flaskapp-7019299397
+           name: service-flaskapp-<mobilenumber>
            port:
-             number: 3 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+             number: 3XXX # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
 
 ```
 We are ready to test your application !!
