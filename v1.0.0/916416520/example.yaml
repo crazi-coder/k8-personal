@@ -1,0 +1,34 @@
+# replace the 916416520 with your mobile number
+
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: flaskapp-916416520-release
+  namespace: personal-rnd
+spec:
+  releaseName: flaskapp-916416520
+  targetNamespace: personal-rnd
+  interval: 24h
+  chart:
+    spec:
+      chart: base-deployment
+      version: 1.0.0
+      sourceRef:
+        kind: HelmRepository
+        name: crazedencoder
+        namespace: flux-system
+      interval: 24h
+  values:
+    global:
+      applicationName: flaskapp-916416520
+    replicaCount: 2
+    image: registry.crazedencoder.com/916416520/sample-app:v1
+    containerDetails:
+      pullPolicy: IfNotPresent
+      ports:
+        - containerPort: 5000
+          name: pw-address
+    service:
+      type: ClusterIP
+      port: 3XXX # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+      targetPort: pw-address
