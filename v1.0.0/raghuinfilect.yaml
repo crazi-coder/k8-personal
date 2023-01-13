@@ -21,7 +21,7 @@ spec:
     global:
       applicationName: flaskapp-raghuinfilect
     replicaCount: 2
-    image: registry.crazedencoder.com/raghuinfilect/sample-app:v1
+    image: registry.crazedencoder.com/raghuinfilect/sample-app:v2
     containerDetails:
       pullPolicy: IfNotPresent
       ports:
