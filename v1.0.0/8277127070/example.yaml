@@ -31,6 +31,14 @@ spec:
       type: ClusterIP
       port: 3021
       targetPort: pw-address
+      
+    resources:
+       limits:
+         cpu: 100m
+         memory: 100Mi
+       requests:
+         cpu: 80m
+         memory: 80Mi
 
 
 ---
