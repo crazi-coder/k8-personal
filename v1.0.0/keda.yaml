@@ -11,7 +11,7 @@ spec:
   chart:
     spec:
       chart: keda
-      version: 2.6.1
+      version: 2.9.1
       sourceRef:
         kind: HelmRepository
         name: kedacore
@@ -40,7 +40,7 @@ spec:
   chart:
     spec:
       chart: keda-add-ons-http
-      version: 2.6.1
+      version: 0.2.2
       sourceRef:
         kind: HelmRepository
         name: kedacore
