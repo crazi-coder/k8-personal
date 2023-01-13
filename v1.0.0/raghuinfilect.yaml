@@ -2,10 +2,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: flaskapp-8277127070-t1-release
+  name: flaskapp-raghuinfilect-release
   namespace: personal-rnd
 spec:
-  releaseName: flaskapp-8277127070-t1
+  releaseName: flaskapp-raghuinfilect
   targetNamespace: personal-rnd
   interval: 24h
   chart:
@@ -19,9 +19,9 @@ spec:
       interval: 24h
   values:
     global:
-      applicationName: flaskapp-8277127070-t1
-    replicaCount: 1
-    image: registry.crazedencoder.com/8277127070/sample-app:v2
+      applicationName: flaskapp-raghuinfilect
+    replicaCount: 2
+    image: registry.crazedencoder.com/raghuinfilect/sample-app:v1
     containerDetails:
       pullPolicy: IfNotPresent
       ports:
@@ -29,36 +29,15 @@ spec:
           name: pw-address
     service:
       type: ClusterIP
-      port: 3021
+      port: 3050
       targetPort: pw-address
 
-    resources:
-       limits:
-         cpu: 100m
-         memory: 100Mi
-       requests:
-         cpu: 80m
-         memory: 80Mi
-
-# ---
-# kind: HTTPScaledObject
-# apiVersion: http.keda.sh/v1alpha1
-# metadata:
-#     name: flaskapp-8277127070-t1
-# spec:
-#     scaleTargetRef:
-#         deployment: flaskapp-8277127070-t1-release
-#         service: service-flaskapp-8277127070-t1
-#         port: 3021
-#     replicas:
-#       min: 2
-#       max: 5
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: letsencrypt-ingress-8277127070-flaskapp
+ name: letsencrypt-ingress-raghuinfilect-flaskapp
  namespace: personal-rnd
  annotations:
   nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -70,16 +49,16 @@ metadata:
 spec:
  tls:
  - hosts:
-   - 8277127070t1.crazedencoder.com
+   - raghuinfilect.crazedencoder.com
    secretName: letsencrypt-issuer
  rules:
- - host: 8277127070t1.crazedencoder.com
+ - host: raghuinfilect.crazedencoder.com
    http:
      paths:
      - pathType: Prefix
        path: /
        backend:
          service:
-           name: service-flaskapp-8277127070-t1
+           name: service-flaskapp-raghuinfilect
            port:
-             number: 3021
+             number: 3050

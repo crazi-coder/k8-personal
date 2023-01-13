@@ -36,7 +36,7 @@ sample-app                                         v1        a420beb4e8a4   19 m
 registry.crazedencoder.com/8277127070/sample-app   v1        a420beb4e8a4   19 minutes ago   53.8MB
 filter-service                                     latest    8dad80a263d7   3 weeks ago      16MB
 """
-# Pus the image to registry.crazedencoder.com
+# Push the image to registry.crazedencoder.com
 sudo docker image push --all-tags registry.crazedencoder.com/8277127070/sample-app
 ```
 ## Step 3: Create a kube deployment files
