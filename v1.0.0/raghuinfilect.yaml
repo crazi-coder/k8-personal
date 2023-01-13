@@ -2,10 +2,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: flaskapp-raghuinfilect-t1-release
+  name: flaskapp-raghuinfilect-release
   namespace: personal-rnd
 spec:
-  releaseName: flaskapp-raghuinfilect-t1
+  releaseName: flaskapp-raghuinfilect
   targetNamespace: personal-rnd
   interval: 24h
   chart:
@@ -19,7 +19,7 @@ spec:
       interval: 24h
   values:
     global:
-      applicationName: flaskapp-raghuinfilect-t1
+      applicationName: flaskapp-raghuinfilect
     replicaCount: 2
     image: registry.crazedencoder.com/raghuinfilect/sample-app:v1
     containerDetails:
@@ -49,16 +49,16 @@ metadata:
 spec:
  tls:
  - hosts:
-   - raghuinfilectt1.crazedencoder.com
+   - raghuinfilect.crazedencoder.com
    secretName: letsencrypt-issuer
  rules:
- - host: raghuinfilectt1.crazedencoder.com
+ - host: raghuinfilect.crazedencoder.com
    http:
      paths:
      - pathType: Prefix
        path: /
        backend:
          service:
-           name: service-flaskapp-raghuinfilect-t1
+           name: service-flaskapp-raghuinfilect
            port:
              number: 3050
