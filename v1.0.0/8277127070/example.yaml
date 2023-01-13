@@ -21,7 +21,7 @@ spec:
     global:
       applicationName: flaskapp-8277127070-t1
     replicaCount: 1
-    image: registry.crazedencoder.com/8277127070/sample-app:v1
+    image: registry.crazedencoder.com/8277127070/sample-app:v2
     containerDetails:
       pullPolicy: IfNotPresent
       ports:
