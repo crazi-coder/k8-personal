@@ -29,7 +29,7 @@ spec:
           name: pw-address
     service:
       type: ClusterIP
-      port: 7019
+      port: 3132
       targetPort: pw-address
 
 
@@ -61,4 +61,4 @@ spec:
          service:
            name: service-flaskapp-7019299397-t1
            port:
-             number: 7019
+             number: 3132
