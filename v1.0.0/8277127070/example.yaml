@@ -37,8 +37,8 @@ spec:
          cpu: 100m
          memory: 100Mi
        requests:
-         cpu: 80m
-         memory: 80Mi
+         cpu: 30m
+         memory: 20Mi
 
 ---
 kind: HTTPScaledObject
