@@ -47,13 +47,14 @@ metadata:
     name: flaskapp-8277127070-t1
     namespace: personal-rnd
 spec:
+    host: 8277127070t1.crazedencoder.com
     scaleTargetRef:
         deployment: flaskapp-8277127070-t1-release
         service: service-flaskapp-8277127070-t1
         port: 3021
     replicas:
-      min: 2
-      max: 5
+      min: 3
+      max: 10
 
 ---
 apiVersion: networking.k8s.io/v1
