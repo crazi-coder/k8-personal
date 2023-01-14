@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: flaskapp-8277127070-t1-release
+  name: flaskapp-8277127070-release
   namespace: personal-rnd
 spec:
   releaseName: flaskapp-8277127070-t1
@@ -40,19 +40,19 @@ spec:
          cpu: 80m
          memory: 80Mi
 
-# ---
-# kind: HTTPScaledObject
-# apiVersion: http.keda.sh/v1alpha1
-# metadata:
-#     name: flaskapp-8277127070-t1
-# spec:
-#     scaleTargetRef:
-#         deployment: flaskapp-8277127070-t1-release
-#         service: service-flaskapp-8277127070-t1
-#         port: 3021
-#     replicas:
-#       min: 2
-#       max: 5
+---
+kind: HTTPScaledObject
+apiVersion: http.keda.sh/v1alpha1
+metadata:
+    name: flaskapp-8277127070-t1
+spec:
+    scaleTargetRef:
+        deployment: flaskapp-8277127070-t1-release
+        service: service-flaskapp-8277127070-t1
+        port: 3021
+    replicas:
+      min: 2
+      max: 5
 
 ---
 apiVersion: networking.k8s.io/v1
