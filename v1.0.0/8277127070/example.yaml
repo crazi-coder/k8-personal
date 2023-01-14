@@ -45,6 +45,7 @@ kind: HTTPScaledObject
 apiVersion: http.keda.sh/v1alpha1
 metadata:
     name: flaskapp-8277127070-t1
+    namespace: personal-rnd
 spec:
     scaleTargetRef:
         deployment: flaskapp-8277127070-t1-release
