@@ -18,6 +18,8 @@ spec:
         namespace: flux-system
       interval: 24h
   values:
+    auth.username: admin
+    auth.password: admin
     resources:
       limits:
         cpu: 300m
