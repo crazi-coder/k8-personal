@@ -72,10 +72,10 @@ metadata:
 spec:
  tls:
  - hosts:
-   - 8277127070t1.crazedencoder.com
+   - 8277127070.crazedencoder.com
    secretName: letsencrypt-issuer
  rules:
- - host: 8277127070t1.crazedencoder.com
+ - host: 8277127070.crazedencoder.com
    http:
      paths:
      - pathType: Prefix

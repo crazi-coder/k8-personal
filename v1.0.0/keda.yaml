@@ -18,6 +18,8 @@ spec:
         namespace: flux-system
       interval: 24h
   values:
+    
+
     resources:
       limits:
         cpu: 300m
