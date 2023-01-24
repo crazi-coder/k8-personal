@@ -10,7 +10,7 @@ spec:
   interval: 24h
   chart:
     spec:
-      chart: rabbitmq
+      chart: bitnami/rabbitmq
       version: 3.11.6
       sourceRef:
         kind: HelmRepository
