@@ -9,7 +9,7 @@ spec:
   interval: 24h
   chart:
     spec:
-      chart: manticoresearch/manticoresearch
+      chart: manticoresearch
       version: 5.0.25
       sourceRef:
         kind: HelmRepository
