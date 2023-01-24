@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: manticoresearch/manticoresearch
-      version: 3.11.6
+      version: 5.0.25
       sourceRef:
         kind: HelmRepository
         name: manticoresearch
