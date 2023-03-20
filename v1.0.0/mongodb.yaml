@@ -2,10 +2,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: mongodb-release
+  name: v1-release
   namespace: personal-rnd
 spec:
-  releaseName: mingodb
+  releaseName: mongodb
   targetNamespace: personal-rnd
   interval: 24h
   chart:
