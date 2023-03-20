@@ -20,4 +20,4 @@ spec:
   values:
     auth.rootUser: root
     auth.rootPassword: root
-    persistence.size: 20Gi
+    persistence.size: 10Gi
