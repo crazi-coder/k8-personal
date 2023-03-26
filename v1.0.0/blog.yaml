@@ -20,7 +20,7 @@ spec:
   values:
     wordpressUsername: abhilash
     wordpressPassword: PCMVNfUcpr3kHeDtpiCA
-    persistence.size: 100Gi
+    persistence.size: 50Gi
     service.type: ClusterIP
 
 ---
