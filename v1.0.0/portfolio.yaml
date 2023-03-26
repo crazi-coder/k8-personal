@@ -56,6 +56,8 @@ spec:
  - hosts:
    - abhilashjosephc.com
    secretName: letsencrypt-issuer
+   - blog.abhilashjosephc.com
+   secretName: letsencrypt-issuer
  rules:
  - host: abhilashjosephc.com
    http:
@@ -67,3 +69,13 @@ spec:
            name: service-personal-website
            port:
              number: 3300 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+ - host: blog.abhilashjosephc.com
+   http:
+     paths:
+     - pathType: Prefix
+       path: /
+       backend:
+         service:
+           name: wordpress-blog
+           port:
+             number: 8080 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
