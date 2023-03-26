@@ -21,7 +21,6 @@ spec:
     replicaCount: 1
     wordpressUsername: abhilash
     wordpressPassword: PCMVNfUcpr3kHeDtpiCA
-    persistence.size: 50Gi
     mariadb:
       auth:
         rootPassword: root
