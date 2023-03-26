@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: letsencrypt-ingress-blog-website
+ name: letsencrypt-ingress-blog-website-v1
  namespace: personal-rnd
  annotations:
   nginx.ingress.kubernetes.io/ssl-redirect: "true"
