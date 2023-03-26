@@ -21,6 +21,14 @@ spec:
     wordpressUsername: abhilash
     wordpressPassword: PCMVNfUcpr3kHeDtpiCA
     persistence.size: 50Gi
+    mariadb:
+      auth:
+        rootPassword: root
+        username: abhilash
+        password: nopassword
     service:
       type: ClusterIP
+
+    memcached:
+      enabled: true
 
