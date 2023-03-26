@@ -14,7 +14,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - blog.abhilashjosephc.com
+    - abhilashjosephc.com
     secretName: letsencrypt-issuer
   rules:
     - host: blog.abhilashjosephc.com
