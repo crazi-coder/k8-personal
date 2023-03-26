@@ -28,7 +28,7 @@ spec:
           name: pw-address
       volumeMounts:
         - mountPath: /usr/share/nginx/html
-          subPath: example-static-website
+          subPath: portfolio
           name: static-website-volume
     service:
       type: ClusterIP
