@@ -19,7 +19,7 @@ spec:
   values:
     global:
       applicationName: personal-website
-    replicaCount: 2
+    replicaCount: 1
     image: nginx:alpine
     containerDetails:
       pullPolicy: IfNotPresent
@@ -66,4 +66,4 @@ spec:
          service:
            name: service-personal-website
            port:
-             number: 3XXX # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+             number: 3300 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
