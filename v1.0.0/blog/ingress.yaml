@@ -17,11 +17,11 @@ spec:
     - abhilashjosephc.com
     secretName: letsencrypt-issuer
   rules:
-  - host: abhilashjosephc.com
+  - host: blog.abhilashjosephc.com
     http:
       paths:
       - pathType: Prefix
-        path: /blog
+        path: /
         backend:
           service:
             name: wordpress-blog
