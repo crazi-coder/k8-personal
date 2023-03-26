@@ -26,4 +26,4 @@ spec:
             service:
               name: wordpress-blog
               port:
-                number: 8080 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+                number: 80 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
