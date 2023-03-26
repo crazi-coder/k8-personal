@@ -57,13 +57,13 @@ spec:
     - abhilashjosephc.com
     secretName: letsencrypt-issuer
   rules:
-    - host: abhilashjosephc.com
-      http:
-        paths:
-        - pathType: Prefix
-          path: /
-          backend:
-            service:
-              name: service-personal-website
-              port:
-                number: 3300 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+  - host: abhilashjosephc.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: service-personal-website
+            port:
+              number: 3300 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132

@@ -17,13 +17,13 @@ spec:
     - blog.abhilashjosephc.com
     secretName: letsencrypt-issuer
   rules:
-    - host: blog.abhilashjosephc.com
-      http:
-        paths:
-        - pathType: Prefix
-          path: /
-          backend:
-            service:
-              name: wordpress-blog
-              port:
-                number: 80 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+  - host: blog.abhilashjosephc.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: wordpress-blog
+            port:
+              number: 80 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
