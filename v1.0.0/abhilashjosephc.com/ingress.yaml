@@ -28,7 +28,7 @@ spec:
             port:
               number: 3300
       - pathType: Prefix
-        path: /blog
+        path: "/blog/"
         backend:
           service:
             name: wordpress-blog
