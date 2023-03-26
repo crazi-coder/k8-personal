@@ -48,7 +48,7 @@ spec:
         tier: mysql
     spec:
       containers:
-      - image: mariadb:10.7.8
+      - image: mariadb:10.7.8-focal
         name: mysql
         env:
         - name: MARIADB_ROOT_PASSWORD
