@@ -14,16 +14,16 @@ metadata:
 spec:
   tls:
   - hosts:
-    - blog.abhilashjosephc.com
+    - abhilashjosephc.com
     secretName: letsencrypt-issuer
   rules:
-  - host: blog.abhilashjosephc.com
+  - host: abhilashjosephc.com
     http:
       paths:
       - pathType: Prefix
-        path: /
+        path: /blog
         backend:
           service:
             name: wordpress-blog
             port:
-              number: 443 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
+              number: 80 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
