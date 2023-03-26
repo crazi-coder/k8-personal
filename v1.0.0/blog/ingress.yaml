@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: letsencrypt-ingress-blog-website-v1
+ name: letsencrypt-ingress-blog-website
  namespace: personal-rnd
  annotations:
   nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -24,6 +24,6 @@ spec:
         path: /
         backend:
           service:
-            name: wordpress-blog-v1
+            name: wordpress-blog
             port:
               number: 80 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132

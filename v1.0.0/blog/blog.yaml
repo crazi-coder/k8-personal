@@ -5,7 +5,7 @@ metadata:
   name: wordpress-release
   namespace: personal-rnd
 spec:
-  releaseName: wordpress-blog-v1
+  releaseName: wordpress-blog
   targetNamespace: personal-rnd
   interval: 24h
   chart:
