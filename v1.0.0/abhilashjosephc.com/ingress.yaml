@@ -31,6 +31,6 @@ spec:
         path: "/blog/"
         backend:
           service:
-            name: blog
+            name: blog-wordpress
             port:
               number: 80 
