@@ -24,6 +24,6 @@ spec:
         path: /
         backend:
           service:
-            name: wordpress-blog
+            name: wordpress-blog-v1
             port:
               number: 80 # NOTE: if this number is already used by someone , your application wont run. To avoid this, use your employee ID, For Example 3132
