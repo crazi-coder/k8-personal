@@ -21,7 +21,8 @@ spec:
     wordpressUsername: abhilash
     wordpressPassword: PCMVNfUcpr3kHeDtpiCA
     persistence.size: 50Gi
-    service.type: ClusterIP
+    service:
+      type: ClusterIP
 
 ---
 # apiVersion: networking.k8s.io/v1
