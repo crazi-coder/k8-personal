@@ -26,5 +26,5 @@ spec:
     externalAccess.enabled: true
     externalAccess.service.type: ClusterIP
     externalAccess.service.ports.external: 9094
-    externalAccess.service.domain='crazedencoder.com'
+    externalAccess.service.domain: 'crazedencoder.com'
     # externalAccess.autoDiscovery.enabled: true
