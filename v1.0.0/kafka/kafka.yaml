@@ -21,4 +21,6 @@ spec:
   values:
     persistence:
       enabled: false
+    zookeeper.enabled: true
+    zookeeper.persistence.enabled: false
     
