@@ -21,3 +21,5 @@ spec:
   values:
     persistence:
       enabled: false
+    service:
+      type: NodePort
