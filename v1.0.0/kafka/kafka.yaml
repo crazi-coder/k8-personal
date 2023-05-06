@@ -21,7 +21,9 @@ spec:
   values:
     persistence:
       enabled: false
-    service:
-      type: NodePort
+    # service:
+    #   type: NodePort
     externalAccess.enabled: true
+    externalAccess.service.type: NodePort
+    externalAccess.service.externalIPs[0]: '10.20.1.2'
     # externalAccess.autoDiscovery.enabled: true
