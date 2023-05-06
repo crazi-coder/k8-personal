@@ -19,8 +19,12 @@ spec:
       interval: 24h
   
   values:
+    volumePermissions:
+      enabled: true
     persistence:
       enabled: true
+      size: 10Gi
+      labels: kafka
     externalAccess:
       enabled: true
       service:
