@@ -20,7 +20,7 @@ spec:
   
   values:
     persistence:
-      enabled: false
+      enabled: true
     externalAccess:
       enabled: true
       service:
