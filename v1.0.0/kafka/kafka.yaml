@@ -2,10 +2,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kafka-release-v1
+  name: kafka-release
   namespace: personal-rnd
 spec:
-  releaseName: kafka1
+  releaseName: kafka
   targetNamespace: personal-rnd
   interval: 24h
   chart:
