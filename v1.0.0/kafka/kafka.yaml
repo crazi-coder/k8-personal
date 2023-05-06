@@ -21,9 +21,8 @@ spec:
   values:
     persistence:
       enabled: false
-    externalAccess:
-      enabled: true
-      service:
-        type: NodePort
-      autoDiscovery:
-        enabled: true
+    externalAccess.enabled: true
+    externalAccess.service.type: NodePort
+    externalAccess.autoDiscovery.enabled: true
+    serviceAccount.create: true
+    rbac.create: true
