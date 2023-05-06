@@ -25,5 +25,6 @@ spec:
     externalAccess.service.type: NodePort
     externalAccess.service.ports.external: 3078
     externalAccess.autoDiscovery.enabled: true
+    externalAccess.service.useHostIPs[0]: 10.20.1.2
     serviceAccount.create: true
     rbac.create: true
