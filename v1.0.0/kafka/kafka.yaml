@@ -23,4 +23,5 @@ spec:
       enabled: false
     service:
       type: NodePort
+    externalAccess.enabled: true
     # externalAccess.autoDiscovery.enabled: true
