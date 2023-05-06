@@ -23,6 +23,6 @@ spec:
       enabled: false
     externalAccess.enabled: true
     externalAccess.autoDiscovery.enabled: true
-    serviceAccount.create: true
+    #serviceAccount.create: true
     rbac.create: true
-    zookeeper.enabled: true
+    # zookeeper.enabled: true
