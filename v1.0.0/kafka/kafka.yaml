@@ -21,5 +21,9 @@ spec:
   values:
     persistence:
       enabled: false
-    service:
-      type: NodePort
+    externalAccess:
+      enabled: true
+      service:
+        type: NodePort
+      autoDiscovery:
+        enabled:  true
