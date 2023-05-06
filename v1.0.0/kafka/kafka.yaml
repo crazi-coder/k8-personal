@@ -23,7 +23,7 @@ spec:
       enabled: false
     externalAccess.enabled: true
     externalAccess.service.type: NodePort
-    externalAccess.service.ports.external: 30078
+    externalAccess.service.ports.external: 3078
     externalAccess.autoDiscovery.enabled: true
     serviceAccount.create: true
     rbac.create: true
