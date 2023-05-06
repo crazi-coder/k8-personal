@@ -20,4 +20,4 @@ spec:
   
   values:
     persistence:
-      size: 20Gi
+      enabled: false
