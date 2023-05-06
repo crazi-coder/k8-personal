@@ -22,7 +22,8 @@ spec:
     persistence:
       enabled: false
     externalAccess.enabled: true
-    externalAccess.service.type: NodePort
+    externalAccess.service.type: LoadBalancer
+    externalAccess.service.ports.external: 9094
     externalAccess.autoDiscovery.enabled: true
     serviceAccount.create: true
     rbac.create: true
