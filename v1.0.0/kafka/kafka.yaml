@@ -23,6 +23,10 @@ spec:
       enabled: true
     externalAccess:
       enabled: true
+      service:
+        type: NodePort
+        ports:
+          external: 9094
       autoDiscovery:
         enabled: true
     rbac:
