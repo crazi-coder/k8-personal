@@ -28,6 +28,8 @@ spec:
       enabled: true
       service:
         type: NodePort
+        nodePorts:
+          - 31629
         ports:
           external: 9094
       autoDiscovery:
