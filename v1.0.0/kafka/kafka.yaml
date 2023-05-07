@@ -22,7 +22,7 @@ spec:
     volumePermissions:
       enabled: true
     persistence:
-      enabled: true
+      enabled: false
       size: 10Gi
     externalAccess:
       enabled: true
